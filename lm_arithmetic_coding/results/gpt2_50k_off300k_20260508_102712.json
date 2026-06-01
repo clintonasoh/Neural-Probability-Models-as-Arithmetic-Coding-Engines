@@ -1,0 +1,90 @@
+{
+  "run_id": "gpt2_50k_off300k_20260508_102712",
+  "timestamp": "2026-05-08T10:31:58.905303",
+  "config": {
+    "model": "gpt2",
+    "size": 50000,
+    "offset": 300000,
+    "window": 512
+  },
+  "original_bytes": 50000,
+  "results": {
+    "Shannon entropy (lower bound)": {
+      "bpc": 4.979282,
+      "compression_ratio": 1.6067,
+      "space_saving_pct": 37.76,
+      "elapsed_seconds": 0.21,
+      "throughput_kb_s": 236.8,
+      "speed_str": "237 KB/s"
+    },
+    "Static Huffman": {
+      "bpc": 5.00414,
+      "compression_ratio": 1.5987,
+      "space_saving_pct": 37.45,
+      "elapsed_seconds": 0.21,
+      "throughput_kb_s": 236.8,
+      "speed_str": "237 KB/s"
+    },
+    "Static Arithmetic Coding": {
+      "bpc": 4.98198,
+      "compression_ratio": 1.6058,
+      "space_saving_pct": 37.73,
+      "elapsed_seconds": 0.21,
+      "throughput_kb_s": 236.8,
+      "speed_str": "237 KB/s"
+    },
+    "gzip -9": {
+      "bpc": 3.12784,
+      "compression_ratio": 2.5577,
+      "space_saving_pct": 60.9,
+      "elapsed_seconds": 0.21,
+      "throughput_kb_s": 236.8,
+      "speed_str": "237 KB/s"
+    },
+    "bzip2 -9": {
+      "bpc": 2.78704,
+      "compression_ratio": 2.8704,
+      "space_saving_pct": 65.16,
+      "elapsed_seconds": 0.21,
+      "throughput_kb_s": 236.8,
+      "speed_str": "237 KB/s"
+    },
+    "lzma preset=9": {
+      "bpc": 2.86784,
+      "compression_ratio": 2.7896,
+      "space_saving_pct": 64.15,
+      "elapsed_seconds": 0.21,
+      "throughput_kb_s": 236.8,
+      "speed_str": "237 KB/s"
+    },
+    "LLM-AC (gpt2, theoretical)": {
+      "bpc": 1.181257,
+      "compression_ratio": 6.7724,
+      "space_saving_pct": 85.23,
+      "n_tokens": 13678,
+      "n_chars": 50000,
+      "n_forward_passes": 13677,
+      "tokens_per_second": 74.37,
+      "elapsed_seconds": 183.93,
+      "bits_per_token": 4.318409,
+      "bits_per_char": 1.181257,
+      "peak_memory_delta_mb": 897.9,
+      "speed_str": "74.4 tok/s"
+    },
+    "LLM-AC (gpt2, actual 5KB)": {
+      "bpc": 1.2494,
+      "compression_ratio": 6.4031,
+      "space_saving_pct": 84.38,
+      "n_tokens": 1850,
+      "n_forward_passes": 1849,
+      "tokens_per_second": 38.76,
+      "elapsed_seconds": 47.73,
+      "compressed_bytes": 781,
+      "n_bits": 6247,
+      "lossless": true,
+      "decode_time_s": 45.94,
+      "decode_tok_s": 40.27,
+      "speed_str": "38.8 tok/s"
+    }
+  }
+}

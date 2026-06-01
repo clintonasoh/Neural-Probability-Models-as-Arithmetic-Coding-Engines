@@ -1,0 +1,75 @@
+{
+  "run_id": "gpt2_50k_off300k_20260508_121611",
+  "timestamp": "2026-05-08T12:18:48.635953",
+  "config": {
+    "model": "gpt2",
+    "size": 50000,
+    "offset": 300000,
+    "window": 256
+  },
+  "original_bytes": 50000,
+  "results": {
+    "Shannon entropy (lower bound)": {
+      "bpc": 4.979282,
+      "compression_ratio": 1.6067,
+      "space_saving_pct": 37.76,
+      "elapsed_seconds": 0.22,
+      "throughput_kb_s": 222.1,
+      "speed_str": "222 KB/s"
+    },
+    "Static Huffman": {
+      "bpc": 5.00414,
+      "compression_ratio": 1.5987,
+      "space_saving_pct": 37.45,
+      "elapsed_seconds": 0.22,
+      "throughput_kb_s": 222.1,
+      "speed_str": "222 KB/s"
+    },
+    "Static Arithmetic Coding": {
+      "bpc": 4.98198,
+      "compression_ratio": 1.6058,
+      "space_saving_pct": 37.73,
+      "elapsed_seconds": 0.22,
+      "throughput_kb_s": 222.1,
+      "speed_str": "222 KB/s"
+    },
+    "gzip -9": {
+      "bpc": 3.12784,
+      "compression_ratio": 2.5577,
+      "space_saving_pct": 60.9,
+      "elapsed_seconds": 0.22,
+      "throughput_kb_s": 222.1,
+      "speed_str": "222 KB/s"
+    },
+    "bzip2 -9": {
+      "bpc": 2.78704,
+      "compression_ratio": 2.8704,
+      "space_saving_pct": 65.16,
+      "elapsed_seconds": 0.22,
+      "throughput_kb_s": 222.1,
+      "speed_str": "222 KB/s"
+    },
+    "lzma preset=9": {
+      "bpc": 2.86784,
+      "compression_ratio": 2.7896,
+      "space_saving_pct": 64.15,
+      "elapsed_seconds": 0.22,
+      "throughput_kb_s": 222.1,
+      "speed_str": "222 KB/s"
+    },
+    "LLM-AC (gpt2, theoretical)": {
+      "bpc": 1.200275,
+      "compression_ratio": 6.6651,
+      "space_saving_pct": 85.0,
+      "n_tokens": 13678,
+      "n_chars": 50000,
+      "n_forward_passes": 13677,
+      "tokens_per_second": 91.32,
+      "elapsed_seconds": 149.77,
+      "bits_per_token": 4.387931,
+      "bits_per_char": 1.200275,
+      "peak_memory_delta_mb": 897.0,
+      "speed_str": "91.3 tok/s"
+    }
+  }
+}

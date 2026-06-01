@@ -1,0 +1,90 @@
+{
+  "run_id": "gpt2-medium_50k_start_20260505_064322",
+  "timestamp": "2026-05-05T07:10:19.169369",
+  "config": {
+    "model": "gpt2-medium",
+    "size": 50000,
+    "offset": 0,
+    "window": 512
+  },
+  "original_bytes": 50000,
+  "results": {
+    "Shannon entropy (lower bound)": {
+      "bpc": 4.89972,
+      "compression_ratio": 1.6327,
+      "space_saving_pct": 38.75,
+      "elapsed_seconds": 0.76,
+      "throughput_kb_s": 64.6,
+      "speed_str": "65 KB/s"
+    },
+    "Static Huffman": {
+      "bpc": 4.9185,
+      "compression_ratio": 1.6265,
+      "space_saving_pct": 38.52,
+      "elapsed_seconds": 0.76,
+      "throughput_kb_s": 64.6,
+      "speed_str": "65 KB/s"
+    },
+    "Static Arithmetic Coding": {
+      "bpc": 4.90446,
+      "compression_ratio": 1.6312,
+      "space_saving_pct": 38.69,
+      "elapsed_seconds": 0.76,
+      "throughput_kb_s": 64.6,
+      "speed_str": "65 KB/s"
+    },
+    "gzip -9": {
+      "bpc": 3.01312,
+      "compression_ratio": 2.6551,
+      "space_saving_pct": 62.34,
+      "elapsed_seconds": 0.76,
+      "throughput_kb_s": 64.6,
+      "speed_str": "65 KB/s"
+    },
+    "bzip2 -9": {
+      "bpc": 2.696,
+      "compression_ratio": 2.9674,
+      "space_saving_pct": 66.3,
+      "elapsed_seconds": 0.76,
+      "throughput_kb_s": 64.6,
+      "speed_str": "65 KB/s"
+    },
+    "lzma preset=9": {
+      "bpc": 2.8352,
+      "compression_ratio": 2.8217,
+      "space_saving_pct": 64.56,
+      "elapsed_seconds": 0.76,
+      "throughput_kb_s": 64.6,
+      "speed_str": "65 KB/s"
+    },
+    "LLM-AC (gpt2-medium, theoretical)": {
+      "bpc": 0.98602,
+      "compression_ratio": 8.1134,
+      "space_saving_pct": 87.67,
+      "n_tokens": 13448,
+      "n_chars": 50000,
+      "n_forward_passes": 13447,
+      "tokens_per_second": 12.27,
+      "elapsed_seconds": 1096.12,
+      "bits_per_token": 3.666319,
+      "bits_per_char": 0.98602,
+      "peak_memory_delta_mb": 1456.8,
+      "speed_str": "12.3 tok/s"
+    },
+    "LLM-AC (gpt2-medium, actual 5KB)": {
+      "bpc": 0.7556,
+      "compression_ratio": 10.5876,
+      "space_saving_pct": 90.55,
+      "n_tokens": 2174,
+      "n_forward_passes": 2173,
+      "tokens_per_second": 9.47,
+      "elapsed_seconds": 229.67,
+      "compressed_bytes": 473,
+      "n_bits": 3778,
+      "lossless": true,
+      "decode_time_s": 229.44,
+      "decode_tok_s": 9.48,
+      "speed_str": "9.5 tok/s"
+    }
+  }
+}

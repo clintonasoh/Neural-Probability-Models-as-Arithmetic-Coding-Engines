@@ -1,0 +1,90 @@
+{
+  "run_id": "gpt2_50k_start_20260505_032106",
+  "timestamp": "2026-05-05T03:34:30.536971",
+  "config": {
+    "model": "gpt2",
+    "size": 50000,
+    "offset": 0,
+    "window": 512
+  },
+  "original_bytes": 50000,
+  "results": {
+    "Shannon entropy (lower bound)": {
+      "bpc": 4.89972,
+      "compression_ratio": 1.6327,
+      "space_saving_pct": 38.75,
+      "elapsed_seconds": 0.38,
+      "throughput_kb_s": 129.3,
+      "speed_str": "129 KB/s"
+    },
+    "Static Huffman": {
+      "bpc": 4.9185,
+      "compression_ratio": 1.6265,
+      "space_saving_pct": 38.52,
+      "elapsed_seconds": 0.38,
+      "throughput_kb_s": 129.3,
+      "speed_str": "129 KB/s"
+    },
+    "Static Arithmetic Coding": {
+      "bpc": 4.90446,
+      "compression_ratio": 1.6312,
+      "space_saving_pct": 38.69,
+      "elapsed_seconds": 0.38,
+      "throughput_kb_s": 129.3,
+      "speed_str": "129 KB/s"
+    },
+    "gzip -9": {
+      "bpc": 3.01312,
+      "compression_ratio": 2.6551,
+      "space_saving_pct": 62.34,
+      "elapsed_seconds": 0.38,
+      "throughput_kb_s": 129.3,
+      "speed_str": "129 KB/s"
+    },
+    "bzip2 -9": {
+      "bpc": 2.696,
+      "compression_ratio": 2.9674,
+      "space_saving_pct": 66.3,
+      "elapsed_seconds": 0.38,
+      "throughput_kb_s": 129.3,
+      "speed_str": "129 KB/s"
+    },
+    "lzma preset=9": {
+      "bpc": 2.8352,
+      "compression_ratio": 2.8217,
+      "space_saving_pct": 64.56,
+      "elapsed_seconds": 0.38,
+      "throughput_kb_s": 129.3,
+      "speed_str": "129 KB/s"
+    },
+    "LLM-AC (gpt2, theoretical)": {
+      "bpc": 1.117918,
+      "compression_ratio": 7.1562,
+      "space_saving_pct": 86.03,
+      "n_tokens": 13448,
+      "n_chars": 50000,
+      "n_forward_passes": 13447,
+      "tokens_per_second": 26.56,
+      "elapsed_seconds": 506.31,
+      "bits_per_token": 4.156758,
+      "bits_per_char": 1.117918,
+      "peak_memory_delta_mb": 894.2,
+      "speed_str": "26.6 tok/s"
+    },
+    "LLM-AC (gpt2, actual 5KB)": {
+      "bpc": 0.8796,
+      "compression_ratio": 9.095,
+      "space_saving_pct": 89.0,
+      "n_tokens": 2174,
+      "n_forward_passes": 2173,
+      "tokens_per_second": 15.67,
+      "elapsed_seconds": 138.74,
+      "compressed_bytes": 550,
+      "n_bits": 4398,
+      "lossless": true,
+      "decode_time_s": 139.54,
+      "decode_tok_s": 15.58,
+      "speed_str": "15.7 tok/s"
+    }
+  }
+}

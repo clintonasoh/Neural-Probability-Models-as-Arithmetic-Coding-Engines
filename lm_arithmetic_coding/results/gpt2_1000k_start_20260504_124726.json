@@ -1,0 +1,75 @@
+{
+  "run_id": "gpt2_1000k_start_20260504_124726",
+  "timestamp": "2026-05-04T14:06:16.928237",
+  "config": {
+    "model": "gpt2",
+    "size": 1000000,
+    "offset": 0,
+    "window": 512
+  },
+  "original_bytes": 1000000,
+  "results": {
+    "Shannon entropy (lower bound)": {
+      "bpc": 5.058855,
+      "compression_ratio": 1.5814,
+      "space_saving_pct": 36.76,
+      "elapsed_seconds": 3.75,
+      "throughput_kb_s": 260.2,
+      "speed_str": "260 KB/s"
+    },
+    "Static Huffman": {
+      "bpc": 5.084435,
+      "compression_ratio": 1.5734,
+      "space_saving_pct": 36.44,
+      "elapsed_seconds": 3.75,
+      "throughput_kb_s": 260.2,
+      "speed_str": "260 KB/s"
+    },
+    "Static Arithmetic Coding": {
+      "bpc": 5.058949,
+      "compression_ratio": 1.5814,
+      "space_saving_pct": 36.76,
+      "elapsed_seconds": 3.75,
+      "throughput_kb_s": 260.2,
+      "speed_str": "260 KB/s"
+    },
+    "gzip -9": {
+      "bpc": 2.846328,
+      "compression_ratio": 2.8106,
+      "space_saving_pct": 64.42,
+      "elapsed_seconds": 3.75,
+      "throughput_kb_s": 260.2,
+      "speed_str": "260 KB/s"
+    },
+    "bzip2 -9": {
+      "bpc": 2.250584,
+      "compression_ratio": 3.5546,
+      "space_saving_pct": 71.87,
+      "elapsed_seconds": 3.75,
+      "throughput_kb_s": 260.2,
+      "speed_str": "260 KB/s"
+    },
+    "lzma preset=9": {
+      "bpc": 2.325536,
+      "compression_ratio": 3.4401,
+      "space_saving_pct": 70.93,
+      "elapsed_seconds": 3.75,
+      "throughput_kb_s": 260.2,
+      "speed_str": "260 KB/s"
+    },
+    "LLM-AC (gpt2, theoretical)": {
+      "bpc": 1.140605,
+      "compression_ratio": 7.0138,
+      "space_saving_pct": 85.74,
+      "n_tokens": 286273,
+      "n_chars": 1000000,
+      "n_forward_passes": 286272,
+      "tokens_per_second": 60.8,
+      "elapsed_seconds": 4708.43,
+      "bits_per_token": 3.984341,
+      "bits_per_char": 1.140605,
+      "peak_memory_delta_mb": 1064.4,
+      "speed_str": "60.8 tok/s"
+    }
+  }
+}

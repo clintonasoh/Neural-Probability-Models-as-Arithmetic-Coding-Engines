@@ -1,0 +1,106 @@
+======================================================================
+  BLM6106 — Edge Case Test Report
+======================================================================
+
+=== 0. bits_to_bytes / bytes_to_bits Roundtrip ===
+  [PASS]  Empty bit list                                         
+  [PASS]  Single 0                                               
+  [PASS]  Single 1                                               
+  [PASS]  Exactly 8 bits (0xAA)                                  
+  [PASS]  8 x 1 (0xFF)                                           
+  [PASS]  8 x 0 (0x00)                                           
+  [PASS]  7 bits (non-multiple)                                  
+  [PASS]  9 bits (non-multiple)                                  
+  [PASS]  16 bits alternating                                    
+  [PASS]  16 bits 1100 pattern                                   
+  [PASS]  Random 1 bits                                          
+  [PASS]  Random 7 bits                                          
+  [PASS]  Random 8 bits                                          
+  [PASS]  Random 9 bits                                          
+  [PASS]  Random 15 bits                                         
+  [PASS]  Random 16 bits                                         
+  [PASS]  Random 31 bits                                         
+  [PASS]  Random 32 bits                                         
+  [PASS]  Random 100 bits                                        
+  [PASS]  Random 1000 bits                                       
+  [PASS]  Random 9999 bits                                       
+  [PASS]  Byte count for 0 bits: expected 0, got 0
+  [PASS]  Byte count for 1 bits: expected 1, got 1
+  [PASS]  Byte count for 7 bits: expected 1, got 1
+  [PASS]  Byte count for 8 bits: expected 1, got 1
+  [PASS]  Byte count for 9 bits: expected 2, got 2
+  [PASS]  Byte count for 100 bits: expected 13, got 13
+
+=== 1. Arithmetic Coder Losslessness (Static Path — build_cdf) ===
+  [PASS]  Single byte                                          8.000 bpc
+  [PASS]  Two different bytes                                  7.500 bpc
+  [PASS]  Short ASCII                                          6.846 bpc
+  [PASS]  1000x repeated char                                  0.328 bpc
+  [PASS]  Alternating 2 chars (1000 bytes)                     1.327 bpc
+  [PASS]  Repeated phrase (1000 bytes)                         4.129 bpc
+  [PASS]  100 random bytes                                     7.220 bpc
+  [PASS]  1000 random bytes                                    7.822 bpc
+  [PASS]  All 256 byte values once                             8.008 bpc
+  [PASS]  All 256 byte values x4                               8.002 bpc
+  [PASS]  Two-block run                                        1.327 bpc
+  [PASS]  Natural language phrase x30                          4.059 bpc
+
+=== 2. CDF Scaling Stress Tests (LLM Path — probs_to_int_cdf) ===
+  [PASS]  Uniform (all tokens equal)                            
+  [PASS]  Near-deterministic (one token p=0.9999)               
+  [PASS]  Two dominant tokens (p=0.5 each)                      
+  [PASS]  All MIN_PROB (worst-case clamping)                    
+  [PASS]  Geometric distribution                                
+  [PASS]  Random Dirichlet (alpha=0.1)                          
+  [PASS]  Dominant token fraction = 0.994999  (expected > 0.99)
+
+=== 3. LLM Pipeline Roundtrip (probs_to_int_cdf -> encode -> decode) ===
+  [PASS]  Single token (id=0), uniform                                
+  [PASS]  Single token (id=50256), uniform                            
+  [PASS]  Single token, near-deterministic                            
+  [PASS]  10 tokens, uniform distribution                             
+  [PASS]  10 tokens, random Dirichlet                                 
+  [PASS]  10 tokens, model perfectly predicts each token              
+  [PASS]  100 tokens, uniform                                         
+  [PASS]  100 tokens, random Dirichlet                                
+  [PASS]  20x same token (id=42), uniform                             
+  [PASS]  20x same token (id=42), peaked at 42                        
+
+=== 4. Float16 Overflow — Production Bug & Fix ===
+  Float16 max        : 65504.0
+  SCALE_TOTAL        : 10000000
+  Overflow threshold : p > 0.006550 causes inf in float16 path
+
+  [PASS]  Float16 path produces inf for p(token_0)=0.9  [has_inf=True]
+  [PASS]  Float32 path has NO inf for same distribution           [has_inf=False]
+  [PASS]  probs_to_int_cdf(float32) -> valid CDF                 [zero_counts=0, sorted=True]
+  [PASS]  float32 CDF valid for dominant p=0.0065
+  [PASS]  float32 CDF valid for dominant p=0.0066
+  [PASS]  float32 CDF valid for dominant p=0.0100
+  [PASS]  float32 CDF valid for dominant p=0.1000
+  [PASS]  float32 CDF valid for dominant p=0.5000
+  [PASS]  float32 CDF valid for dominant p=0.9900
+
+=== 5. Compression Boundary Cases ===
+  [PASS]  10 000x 'a'  (expect BPC < 0.25)                     0.036 bpc
+  [PASS]  BPC = 0.03650  (ok)
+  [PASS]  10 000 random bytes  (expect BPC > 7.9)              7.983 bpc
+  [PASS]  BPC = 7.9832  (ok)
+  [PASS]  Phrase x200 — entropy gap check                      4.433 bpc
+  [PASS]  H(X)=4.3966  Actual=4.4328  Gap=0.03613  (ok)
+
+=== 6. GPT-2 Tokenization Round-Trip ===
+  [PASS]  Clean prose              9 tokens  exact match  vocab_ok=True
+  [PASS]  XML markup              12 tokens  exact match  vocab_ok=True
+  [PASS]  Numbers                 17 tokens  exact match  vocab_ok=True
+  [PASS]  Punctuation             12 tokens  exact match  vocab_ok=True
+  [PASS]  Non-ASCII                9 tokens  exact match  vocab_ok=True
+
+======================================================================
+  bits_to_bytes/bytes_to_bits roundtrip : ALL PASS
+  Arithmetic coder losslessness (static): ALL PASS
+  CDF scaling stress tests (LLM path)   : ALL PASS
+  LLM pipeline roundtrip                : ALL PASS
+  Float16 overflow detection            : ALL PASS
+  Compression boundary cases            : ALL PASS
+======================================================================

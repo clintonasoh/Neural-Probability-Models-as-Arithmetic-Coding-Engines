@@ -1,0 +1,32 @@
+{
+  "ablation": "window_size",
+  "model": "gpt2",
+  "size": 50000,
+  "offset": 0,
+  "timestamp": "2026-05-08T12:13:32.836787",
+  "windows_tested": [
+    128,
+    256,
+    512
+  ],
+  "results": [
+    {
+      "window": 128,
+      "bpc": 1.249333,
+      "tokens_per_second": 91.88,
+      "source_json": "gpt2_50k_start_20260508_120819.json"
+    },
+    {
+      "window": 256,
+      "bpc": 1.157023,
+      "tokens_per_second": 91.71,
+      "source_json": "gpt2_50k_start_20260508_121057.json"
+    },
+    {
+      "window": 512,
+      "bpc": 1.117918,
+      "tokens_per_second": 26.56,
+      "source_json": "gpt2_50k_start_20260505_032106.json"
+    }
+  ]
+}

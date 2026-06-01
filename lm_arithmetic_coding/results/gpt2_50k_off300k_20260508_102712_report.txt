@@ -1,0 +1,66 @@
+BLM6106 Data Compression — LLM Arithmetic Coding Results
+============================================================
+Run ID   : gpt2_50k_off300k_20260508_102712
+Date     : 2026-05-08T10:31:58.905303
+Model    : gpt2
+Dataset  : Enwik8, 50KB from offset 300,000
+Window   : 512 tokens
+
+Method                                      BPC   Ratio   Saving
+------------------------------------------------------------
+LLM-AC (gpt2, theoretical)                1.181   6.77x    85.2%
+LLM-AC (gpt2, actual 5KB)                 1.249   6.40x    84.4%
+bzip2 -9                                  2.787   2.87x    65.2%
+lzma preset=9                             2.868   2.79x    64.2%
+gzip -9                                   3.128   2.56x    60.9%
+Shannon entropy (lower bound)             4.979   1.61x    37.8%
+Static Arithmetic Coding                  4.982   1.61x    37.7%
+Static Huffman                            5.004   1.60x    37.4%
+
+Detailed Metrics
+------------------------------------------------------------
+
+[Shannon entropy (lower bound)]
+  elapsed_seconds: 0.21
+  throughput_kb_s: 236.8
+
+[Static Huffman]
+  elapsed_seconds: 0.21
+  throughput_kb_s: 236.8
+
+[Static Arithmetic Coding]
+  elapsed_seconds: 0.21
+  throughput_kb_s: 236.8
+
+[gzip -9]
+  elapsed_seconds: 0.21
+  throughput_kb_s: 236.8
+
+[bzip2 -9]
+  elapsed_seconds: 0.21
+  throughput_kb_s: 236.8
+
+[lzma preset=9]
+  elapsed_seconds: 0.21
+  throughput_kb_s: 236.8
+
+[LLM-AC (gpt2, theoretical)]
+  n_tokens: 13678
+  n_chars: 50000
+  n_forward_passes: 13677
+  tokens_per_second: 74.37
+  elapsed_seconds: 183.93
+  bits_per_token: 4.318409
+  bits_per_char: 1.181257
+  peak_memory_delta_mb: 897.9
+
+[LLM-AC (gpt2, actual 5KB)]
+  n_tokens: 1850
+  n_forward_passes: 1849
+  tokens_per_second: 38.76
+  elapsed_seconds: 47.73
+  compressed_bytes: 781
+  n_bits: 6247
+  lossless: True
+  decode_time_s: 45.94
+  decode_tok_s: 40.27
