@@ -1,0 +1,22 @@
+# Ignore everything
+*
+
+# Except these folders and their contents
+!figures/
+!figures/**
+!pixel_arithmetic_coding/
+!pixel_arithmetic_coding/**
+!lm_arithmetic_coding/
+!lm_arithmetic_coding/**
+
+# And the .gitignore itself
+!.gitignore
+
+# Top-level README
+!README.md
+
+# Exclude large data files
+lm_arithmetic_coding/data/enwik8
+lm_arithmetic_coding/data/enwik8.zip
+lm_arithmetic_coding/data/enwik8_1000k.txt
+lm_arithmetic_coding/data/enwik8_1000k_start.txt
