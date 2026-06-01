@@ -1,4 +1,4 @@
-# BLM6106 — Data Compression Term Project
+# Data Compression Project
 ## Experiment 2: PixelCNN-Guided Arithmetic Coding on Fashion-MNIST
 
 **Slogan:** Push the Boundaries with AI!

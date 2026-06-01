@@ -1,4 +1,4 @@
-# BLM6106 — Data Compression Term Project
+# Data Compression Project
 ## Experiment 1: LLM-Guided Arithmetic Coding on Enwik8
 
 **Slogan:** Push the Boundaries with AI!
