@@ -123,18 +123,6 @@ Measured on 50 KB of Enwik8, W = 512.
 
 ---
 
-### AI Integration
-
-This project uses AI at **the algorithm level**, not just for coding help:
-
-- GPT-2 *is* the probability model — it replaces the entire statistical
-  component of the arithmetic coder.
-- Claude was used to design the E1/E2/E3 rescaling strategy for the integer
-  arithmetic coder and to debug the CDF scaling precision issue.
-- Interaction history and bug fixes are documented in `../ai_log.docx`.
-
----
-
 ### Evaluation Metrics
 
 - **Bits per character (BPC):** primary metric. Lower is better.

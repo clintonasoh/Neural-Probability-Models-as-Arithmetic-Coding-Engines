@@ -135,13 +135,3 @@ train/test gap, indicating a well-matched model capacity.
 | Optimiser            | Adam, lr = 1e-3, batch = 128              |
 | Training             | 20 epochs on Fashion-MNIST train set      |
 
----
-
-### AI Integration
-
-PixelCNN is the **probability model** — the core AI component of the compressor.
-Without it, the system degrades to a per-pixel static entropy coder.  The model
-was designed and debugged with AI assistance; the sequential 784-pass
-encode/decode scheme was a human engineering decision that overrode the AI's
-initial single-pass proposal, which produced 0/5 lossless reconstructions.
-See `../ai_log.docx` for the full interaction log.
