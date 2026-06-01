@@ -1,0 +1,36 @@
+BLM6106 — PixelCNN Arithmetic Coding (Fashion MNIST)
+=================================================================
+Run     : pixelcnn_fmnist_500img_20260505_105742
+Date    : 2026-05-05T10:57:43.310584
+Images  : 500 from Fashion MNIST test split
+
+Method                                    BPP   Ratio   Saving
+------------------------------------------------------------
+PixelCNN-AC (theoretical)               2.968   2.70x    62.9%
+Shannon entropy                         4.162   1.92x    48.0%
+gzip -9 (raw pixels)                    4.814   1.66x    39.8%
+PNG (lossless)                          5.190   1.54x    35.1%
+Raw (8 bpp)                             8.000   1.00x     0.0%
+
+Detailed Metrics
+------------------------------------------------------------
+
+[Raw (8 bpp)]
+  elapsed_seconds: 0.18
+
+[Shannon entropy]
+  elapsed_seconds: 0.18
+
+[gzip -9 (raw pixels)]
+  elapsed_seconds: 0.18
+
+[PNG (lossless)]
+  elapsed_seconds: 0.18
+
+[PixelCNN-AC (theoretical)]
+  n_images: 500
+  n_pixels: 392000
+  mean_bpp: 2.96795
+  images_per_second: 1416.27
+  elapsed_seconds: 0.35
+  n_forward_passes: 16

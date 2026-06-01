@@ -1,0 +1,47 @@
+{
+  "run_id": "pixelcnn_fmnist_500img_20260505_105742",
+  "timestamp": "2026-05-05T10:57:43.310584",
+  "config": {
+    "n_images": 500,
+    "checkpoint": null,
+    "full_encode": false,
+    "n_encode": 5
+  },
+  "results": {
+    "Raw (8 bpp)": {
+      "bpp": 8.0,
+      "compression_ratio": 1.0,
+      "space_saving_pct": 0.0,
+      "elapsed_seconds": 0.18
+    },
+    "Shannon entropy": {
+      "bpp": 4.162339,
+      "compression_ratio": 1.922,
+      "space_saving_pct": 47.97,
+      "elapsed_seconds": 0.18
+    },
+    "gzip -9 (raw pixels)": {
+      "bpp": 4.814327,
+      "compression_ratio": 1.6617,
+      "space_saving_pct": 39.82,
+      "elapsed_seconds": 0.18
+    },
+    "PNG (lossless)": {
+      "bpp": 5.190041,
+      "compression_ratio": 1.5414,
+      "space_saving_pct": 35.12,
+      "elapsed_seconds": 0.18
+    },
+    "PixelCNN-AC (theoretical)": {
+      "bpp": 2.96795,
+      "compression_ratio": 2.6955,
+      "space_saving_pct": 62.9,
+      "n_images": 500,
+      "n_pixels": 392000,
+      "mean_bpp": 2.96795,
+      "images_per_second": 1416.27,
+      "elapsed_seconds": 0.35,
+      "n_forward_passes": 16
+    }
+  }
+}

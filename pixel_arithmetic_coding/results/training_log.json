@@ -1,0 +1,133 @@
+{
+  "config": {
+    "epochs": 20,
+    "channels": 64,
+    "blocks": 8,
+    "batch": 128,
+    "lr": 0.001,
+    "resume": false
+  },
+  "best_test_bpp": 2.969896,
+  "history": [
+    {
+      "epoch": 1,
+      "train_bpp": 3.892023,
+      "test_bpp": 3.457708,
+      "elapsed_s": 32.2
+    },
+    {
+      "epoch": 2,
+      "train_bpp": 3.337616,
+      "test_bpp": 3.271293,
+      "elapsed_s": 30.8
+    },
+    {
+      "epoch": 3,
+      "train_bpp": 3.222417,
+      "test_bpp": 3.184083,
+      "elapsed_s": 31.2
+    },
+    {
+      "epoch": 4,
+      "train_bpp": 3.158739,
+      "test_bpp": 3.13465,
+      "elapsed_s": 31.6
+    },
+    {
+      "epoch": 5,
+      "train_bpp": 3.124561,
+      "test_bpp": 3.115134,
+      "elapsed_s": 32.1
+    },
+    {
+      "epoch": 6,
+      "train_bpp": 3.098618,
+      "test_bpp": 3.081453,
+      "elapsed_s": 31.4
+    },
+    {
+      "epoch": 7,
+      "train_bpp": 3.067939,
+      "test_bpp": 3.063587,
+      "elapsed_s": 31.5
+    },
+    {
+      "epoch": 8,
+      "train_bpp": 3.05239,
+      "test_bpp": 3.054473,
+      "elapsed_s": 31.5
+    },
+    {
+      "epoch": 9,
+      "train_bpp": 3.039786,
+      "test_bpp": 3.038125,
+      "elapsed_s": 31.4
+    },
+    {
+      "epoch": 10,
+      "train_bpp": 3.024422,
+      "test_bpp": 3.0207,
+      "elapsed_s": 31.3
+    },
+    {
+      "epoch": 11,
+      "train_bpp": 2.991786,
+      "test_bpp": 3.026369,
+      "elapsed_s": 31.3
+    },
+    {
+      "epoch": 12,
+      "train_bpp": 2.987786,
+      "test_bpp": 3.003274,
+      "elapsed_s": 31.5
+    },
+    {
+      "epoch": 13,
+      "train_bpp": 2.98346,
+      "test_bpp": 3.005696,
+      "elapsed_s": 31.3
+    },
+    {
+      "epoch": 14,
+      "train_bpp": 2.978633,
+      "test_bpp": 3.001283,
+      "elapsed_s": 31.3
+    },
+    {
+      "epoch": 15,
+      "train_bpp": 2.972163,
+      "test_bpp": 2.990403,
+      "elapsed_s": 31.4
+    },
+    {
+      "epoch": 16,
+      "train_bpp": 2.97015,
+      "test_bpp": 2.993923,
+      "elapsed_s": 31.5
+    },
+    {
+      "epoch": 17,
+      "train_bpp": 2.968769,
+      "test_bpp": 3.003522,
+      "elapsed_s": 31.3
+    },
+    {
+      "epoch": 18,
+      "train_bpp": 2.966441,
+      "test_bpp": 2.987428,
+      "elapsed_s": 31.3
+    },
+    {
+      "epoch": 19,
+      "train_bpp": 2.958633,
+      "test_bpp": 3.007113,
+      "elapsed_s": 31.4
+    },
+    {
+      "epoch": 20,
+      "train_bpp": 2.956711,
+      "test_bpp": 2.969896,
+      "elapsed_s": 31.3
+    }
+  ]
+}

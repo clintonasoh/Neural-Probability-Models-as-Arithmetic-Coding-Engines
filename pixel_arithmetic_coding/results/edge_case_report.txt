@@ -1,0 +1,7 @@
+PixelCNN Arithmetic Coding — Edge Case Verification
+====================================================
+Tests passed : 36/36
+Tests failed : 0/36
+
+All tests passed.
+Arithmetic coder and CDF scaler verified for image domain.

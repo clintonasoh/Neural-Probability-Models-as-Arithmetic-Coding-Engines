@@ -1,0 +1,92 @@
+{
+  "run_id": "pixelcnn_fmnist_100img_20260505_105746",
+  "timestamp": "2026-05-05T10:58:11.671606",
+  "config": {
+    "n_images": 100,
+    "checkpoint": null,
+    "full_encode": true,
+    "n_encode": 5
+  },
+  "results": {
+    "Raw (8 bpp)": {
+      "bpp": 8.0,
+      "compression_ratio": 1.0,
+      "space_saving_pct": 0.0,
+      "elapsed_seconds": 0.12
+    },
+    "Shannon entropy": {
+      "bpp": 4.030572,
+      "compression_ratio": 1.9848,
+      "space_saving_pct": 49.62,
+      "elapsed_seconds": 0.12
+    },
+    "gzip -9 (raw pixels)": {
+      "bpp": 4.66898,
+      "compression_ratio": 1.7134,
+      "space_saving_pct": 41.64,
+      "elapsed_seconds": 0.12
+    },
+    "PNG (lossless)": {
+      "bpp": 4.998776,
+      "compression_ratio": 1.6004,
+      "space_saving_pct": 37.52,
+      "elapsed_seconds": 0.12
+    },
+    "PixelCNN-AC (theoretical)": {
+      "bpp": 2.856262,
+      "compression_ratio": 2.8009,
+      "space_saving_pct": 64.3,
+      "n_images": 100,
+      "n_pixels": 78400,
+      "mean_bpp": 2.856262,
+      "images_per_second": 261.8,
+      "elapsed_seconds": 0.38,
+      "n_forward_passes": 4
+    },
+    "PixelCNN-AC (actual, 5 images)": {
+      "bpp": 2.629847,
+      "compression_ratio": 3.042,
+      "space_saving_pct": 67.13,
+      "lossless_count": 5,
+      "lossless_pct": 100.0,
+      "mean_actual_bpp": 2.629847,
+      "per_image": [
+        {
+          "class": "Ankle boot",
+          "lossless": true,
+          "bpp": 2.135204,
+          "enc_seconds": 2.76,
+          "dec_seconds": 2.33
+        },
+        {
+          "class": "Pullover",
+          "lossless": true,
+          "bpp": 3.159439,
+          "enc_seconds": 2.31,
+          "dec_seconds": 2.31
+        },
+        {
+          "class": "Trouser",
+          "lossless": true,
+          "bpp": 1.681122,
+          "enc_seconds": 2.55,
+          "dec_seconds": 3.2
+        },
+        {
+          "class": "Trouser",
+          "lossless": true,
+          "bpp": 2.09949,
+          "enc_seconds": 2.28,
+          "dec_seconds": 2.31
+        },
+        {
+          "class": "Shirt",
+          "lossless": true,
+          "bpp": 4.07398,
+          "enc_seconds": 2.26,
+          "dec_seconds": 2.32
+        }
+      ]
+    }
+  }
+}
